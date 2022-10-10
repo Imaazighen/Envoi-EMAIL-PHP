@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+        
+        <div class="formulaire-de-contact">
+    
+            <h1>Formulaire de contact</h1> 
+    
+            <form id="formulaire" name="formulaire" onsubmit="return validateForm()" action="test.php" method="post">
+    
+        <div>
+    
+            <label for="nom">Nom & prénom</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" >
+            <p id="error" name="error"></p>
+    
+        </div>
+     
+        <div>
+    
+            <label for="sujet">Quel est le sujet de votre message ?</label>
+            <input type="text" id="sujet" name="sujet" placeholder="Entrez l'objet de votre message" >
+            <p id="error2" name="error2"></p>
+    
+        </div>
+    
+       <div>
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Votre Email" >
+            <p id="error3" name="error3"></p>
+    
+        </div>
+    
+        <div>
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message" ></textarea>
+            <p id="error4" name="error4"></p>
+    
+        </div>
+    
+        <div>
+    
+            <button type="submit" name="valider">Envoyer</button>
+    
+        </div>
+    
+            </form>
+    </div>
+
+<script>
+
+
+function validateForm()
+
+{
+    
+if ( document.formulaire.nom.value == "")
+
+{
+    document.getElementById('error').innerText = 'ENTREZ VOTRE NOM';
+    error.style.color = 'red';
+    document.getElementById("nom").style.border="solid"
+    document.getElementById("nom").style.borderColor="red"
+    return false;
+}
+
+if ( document.formulaire.sujet.value == "")
+
+{
+    document.getElementById('error').innerText = '';
+    document.getElementById("nom").style.borderColor=""
+    document.getElementById("nom").style.border=""
+
+    document.getElementById('error2').innerText = 'ENTREZ LE SUJET';
+    error2.style.color = 'red';
+    document.getElementById("sujet").style.border="solid"
+    document.getElementById("sujet").style.borderColor="red"
+    return false;
+}
+
+if ( document.formulaire.email.value == "")
+
+{
+    document.getElementById('error2').innerText = '';
+    document.getElementById("sujet").style.border=""
+    document.getElementById("sujet").style.borderColor=""
+
+    document.getElementById('error3').innerText = 'ENTREZ VOTRE EMAIL';
+    error3.style.color = 'red';
+    document.getElementById("email").style.border="solid"
+    document.getElementById("email").style.borderColor="red"
+    return false;
+
+}
+
+if ( document.formulaire.message.value == "")
+
+{
+    document.getElementById('error3').innerText = '';
+    document.getElementById("email").style.border=""
+    document.getElementById("email").style.borderColor=""
+
+    document.getElementById('error4').innerText = 'ENTREZ VOTRE MESSAGE';
+    error4.style.color = 'red';
+    document.getElementById("message").style.border="solid"
+    document.getElementById("message").style.borderColor="red"
+    return false;
+}
+
+else
+{
+    document.getElementById('error4').innerText = '';
+    document.getElementById("message").style.border=""
+    document.getElementById("message").style.borderColor=""
+    alert('Email envoyé')
+}
+} 
+
+
+
+
+</script>
+
+</body>
+</html>
